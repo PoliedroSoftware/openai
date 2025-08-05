@@ -34,3 +34,9 @@ C:\Poliedro\openai\florentia\florentia\obj\Debug\net8.0\refint\florentia.dll
 C:\Poliedro\openai\florentia\florentia\obj\Debug\net8.0\florentia.pdb
 C:\Poliedro\openai\florentia\florentia\obj\Debug\net8.0\florentia.genruntimeconfig.cache
 C:\Poliedro\openai\florentia\florentia\obj\Debug\net8.0\ref\florentia.dll
+C:\Poliedro\openai\florentia\florentia\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Poliedro\openai\florentia\florentia\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Poliedro\openai\florentia\florentia\bin\Debug\net8.0\OpenAI.dll
+C:\Poliedro\openai\florentia\florentia\bin\Debug\net8.0\System.ClientModel.dll
+C:\Poliedro\openai\florentia\florentia\bin\Debug\net8.0\System.Memory.Data.dll
+C:\Poliedro\openai\florentia\florentia\obj\Debug\net8.0\florentia.sourcelink.json

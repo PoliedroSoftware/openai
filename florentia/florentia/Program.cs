@@ -1,13 +1,20 @@
+using System.Net.Http.Headers;
+using System.Text;
+using System.Text.Json;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// Añadir servicios necesarios
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Configurar el token de OpenAI
+string openAIToken = "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"; // Reemplaza esto con tu token de API OpenAI
+builder.Services.AddSingleton<OpenAIService>(new OpenAIService(openAIToken));
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configuración de Swagger (solo para desarrollo)
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -16,29 +23,55 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
+// Endpoint para el chat con OpenAI
+app.MapPost("/chat", async (ChatRequest request, OpenAIService openAIService) =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
+    var aiResponse = await openAIService.GetResponseAsync(request.userMessage);
+    return Results.Ok(new { request.userMessage, aiResponse });
 })
-.WithName("GetWeatherForecast")
+.WithName("ChatWithAI")
 .WithOpenApi();
 
 app.Run();
 
-internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+// Servicio OpenAI
+public class OpenAIService
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    private readonly string _apiKey;
+    private readonly HttpClient _httpClient;
+    private const string OpenAiUrl = "https://api.openai.com/v1/chat/completions";
+
+    public OpenAIService(string apiKey)
+    {
+        _apiKey = apiKey;
+        _httpClient = new HttpClient();
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
+    }
+
+    public async Task<string> GetResponseAsync(string prompt)
+    {
+        var requestBody = new
+        {
+            model = "gpt-3.5-turbo",
+            messages = new[]
+            {
+                new { role = "user", content = prompt }
+            },
+            max_tokens = 100,
+            temperature = 0.7
+        };
+        var content = new StringContent(JsonSerializer.Serialize(requestBody), Encoding.UTF8, "application/json");
+        var response = await _httpClient.PostAsync(OpenAiUrl, content);
+        response.EnsureSuccessStatusCode();
+        var responseString = await response.Content.ReadAsStringAsync();
+        using var doc = JsonDocument.Parse(responseString);
+        var completion = doc.RootElement.GetProperty("choices")[0].GetProperty("message").GetProperty("content").GetString();
+        return completion?.Trim() ?? string.Empty;
+    }
+}
+
+// Clase para recibir el mensaje desde el cuerpo JSON
+public class ChatRequest
+{
+    public string userMessage { get; set; }
 }

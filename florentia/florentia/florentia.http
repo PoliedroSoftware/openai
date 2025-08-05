@@ -3,4 +3,17 @@
 GET {{florentia_HostAddress}}/weatherforecast/
 Accept: application/json
 
+
 ###
+
+POST {{florentia_HostAddress}}/chat
+Content-Type: application/json
+
+{
+  "userMessage": "Hola, me puedes enseñar lo basico de ingles"
+}
+
+###
+
+
+
