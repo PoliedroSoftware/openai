@@ -3,18 +3,14 @@ using System.Text;
 using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Añadir servicios necesarios
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-// Configurar el token de OpenAI
 string openAIToken = "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"; // Reemplaza esto con tu token de API OpenAI
 builder.Services.AddSingleton<OpenAIService>(new OpenAIService(openAIToken));
 
 var app = builder.Build();
 
-// Configuración de Swagger (solo para desarrollo)
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -23,9 +19,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// Endpoint para el chat con OpenAI
-app.MapPost("/chat", async (ChatRequest request, OpenAIService openAIService) =>
-{
+app.MapPost("/chat", async (ChatRequest request, OpenAIService openAIService) =>{
     var aiResponse = await openAIService.GetResponseAsync(request.userMessage);
     return Results.Ok(new { request.userMessage, aiResponse });
 })
@@ -34,7 +28,6 @@ app.MapPost("/chat", async (ChatRequest request, OpenAIService openAIService) =>
 
 app.Run();
 
-// Servicio OpenAI
 public class OpenAIService
 {
     private readonly string _apiKey;
@@ -70,7 +63,6 @@ public class OpenAIService
     }
 }
 
-// Clase para recibir el mensaje desde el cuerpo JSON
 public class ChatRequest
 {
     public string userMessage { get; set; }

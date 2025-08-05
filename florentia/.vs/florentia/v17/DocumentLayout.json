@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Poliedro\\openai\\florentia\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B5CBC2AA-8BB9-4E95-A65D-459AE5BDD214}|florentia\\florentia.csproj|c:\\poliedro\\openai\\florentia\\florentia\\florentia.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{B5CBC2AA-8BB9-4E95-A65D-459AE5BDD214}|florentia\\florentia.csproj|solutionrelative:florentia\\florentia.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B5CBC2AA-8BB9-4E95-A65D-459AE5BDD214}|florentia\\florentia.csproj|c:\\poliedro\\openai\\florentia\\florentia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5CBC2AA-8BB9-4E95-A65D-459AE5BDD214}|florentia\\florentia.csproj|solutionrelative:florentia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -18,17 +14,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 296,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Poliedro\\openai\\florentia\\florentia\\Program.cs",
               "RelativeDocumentMoniker": "florentia\\Program.cs",
               "ToolTip": "C:\\Poliedro\\openai\\florentia\\florentia\\Program.cs",
               "RelativeToolTip": "florentia\\Program.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAnwBsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-05T21:20:42.674Z",
               "IsPinned": true,
@@ -45,19 +41,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "florentia.http",
-              "DocumentMoniker": "C:\\Poliedro\\openai\\florentia\\florentia\\florentia.http",
-              "RelativeDocumentMoniker": "florentia\\florentia.http",
-              "ToolTip": "C:\\Poliedro\\openai\\florentia\\florentia\\florentia.http",
-              "RelativeToolTip": "florentia\\florentia.http",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAjwAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-08-05T22:02:56.155Z",
-              "EditorCaption": ""
             }
           ]
         }

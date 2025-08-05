@@ -482,3 +482,7 @@ global.json
 /sonarqubecoverage/*
 *.http
 .env
+/florentia/.vs/florentia/CopilotIndices/17.14.878.3237/CodeChunks.db
+/florentia/.vs/florentia/CopilotIndices/17.14.878.3237/CodeChunks.db
+/florentia/.vs/florentia/CopilotIndices/17.14.878.3237/CodeChunks.db-shm
+/florentia/.vs/florentia/CopilotIndices/17.14.878.3237/CodeChunks.db-wal
