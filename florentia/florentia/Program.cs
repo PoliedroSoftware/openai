@@ -7,6 +7,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 string openAIToken = "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"; // Reemplaza esto con tu token de API OpenAI
 builder.Services.AddSingleton<OpenAIService>(new OpenAIService(openAIToken));
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
@@ -18,6 +27,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors();
 
 app.MapPost("/chat", async (ChatRequest request, OpenAIService openAIService) =>{
     var aiResponse = await openAIService.GetResponseAsync(request.userMessage);
@@ -43,13 +53,16 @@ public class OpenAIService
 
     public async Task<string> GetResponseAsync(string prompt)
     {
+        var systemPrompt = "Eres Florentia, una profesora de inglés para niños. Siempre responde en español, usa lenguaje sencillo, fácil de entender y tono amigable.";
+        var messages = new List<object>
+        {
+            new { role = "system", content = systemPrompt },
+            new { role = "user", content = prompt }
+        };
         var requestBody = new
         {
             model = "gpt-3.5-turbo",
-            messages = new[]
-            {
-                new { role = "user", content = prompt }
-            },
+            messages = messages,
             max_tokens = 100,
             temperature = 0.7
         };
