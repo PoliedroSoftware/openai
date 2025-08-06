@@ -5,7 +5,7 @@ using System.Text.Json;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-string openAIToken = "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"; // Reemplaza esto con tu token de API OpenAI
+string openAIToken = "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";
 builder.Services.AddSingleton<OpenAIService>(new OpenAIService(openAIToken));
 builder.Services.AddCors(options =>
 {
@@ -29,9 +29,12 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseCors();
 
-app.MapPost("/chat", async (ChatRequest request, OpenAIService openAIService) =>{
+app.MapPost("/chat", async (ChatRequest request, OpenAIService openAIService) => {
     var aiResponse = await openAIService.GetResponseAsync(request.userMessage);
-    return Results.Ok(new { request.userMessage, aiResponse });
+    return Results.Ok(new { 
+        request.userMessage, 
+        aiResponse
+    });
 })
 .WithName("ChatWithAI")
 .WithOpenApi();
@@ -63,6 +66,7 @@ public class OpenAIService
             new { role = "system", content = systemPrompt },
             new { role = "user", content = prompt }
         };
+        
         var requestBody = new
         {
             model = "gpt-3.5-turbo",
@@ -70,17 +74,20 @@ public class OpenAIService
             max_tokens = 100,
             temperature = 0.7
         };
+        
         var content = new StringContent(JsonSerializer.Serialize(requestBody), Encoding.UTF8, "application/json");
         var response = await _httpClient.PostAsync(OpenAiUrl, content);
         response.EnsureSuccessStatusCode();
+        
         var responseString = await response.Content.ReadAsStringAsync();
         using var doc = JsonDocument.Parse(responseString);
         var completion = doc.RootElement.GetProperty("choices")[0].GetProperty("message").GetProperty("content").GetString();
+        
         return completion?.Trim() ?? string.Empty;
     }
 }
 
 public class ChatRequest
 {
-    public string userMessage { get; set; }
+    public string userMessage { get; set; } = string.Empty;
 }
