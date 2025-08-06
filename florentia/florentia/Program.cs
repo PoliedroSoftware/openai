@@ -36,6 +36,10 @@ app.MapPost("/chat", async (ChatRequest request, OpenAIService openAIService) =>
 .WithName("ChatWithAI")
 .WithOpenApi();
 
+app.MapGet("/health", () => Results.Ok(new { status = "Healthy" }))
+   .WithName("HealthCheck")
+   .WithOpenApi();
+
 app.Run();
 
 public class OpenAIService
