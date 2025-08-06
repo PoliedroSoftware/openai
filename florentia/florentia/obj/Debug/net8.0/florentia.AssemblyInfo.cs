@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("florentia")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+717a9b85b9578ca54754945fd178f0d5ee41c388")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa355c36b34d9eca3243197ad634a20f5984574e")]
 [assembly: System.Reflection.AssemblyProductAttribute("florentia")]
 [assembly: System.Reflection.AssemblyTitleAttribute("florentia")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
