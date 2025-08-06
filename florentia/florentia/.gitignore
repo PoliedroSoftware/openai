@@ -31,6 +31,20 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+# Archivos específicos mencionados
+**/.vs/florentia/v17/
+**/.vs/**/*.suo
+**/.vs/**/*.json
+**/bin/Debug/net8.0/
+**/obj/Debug/net8.0/
+**/*.dswa.cache.json
+**/rjsm*.dswa.cache.json
+**/rjsmrazor.dswa.cache.json
+**/*.AssemblyInfo.cs
+**/*.AssemblyInfoInputs.cache
+**/refint/
+**/ref/
+
 # Visual Studio cache/options directory
 .vs/
 .vscode/
