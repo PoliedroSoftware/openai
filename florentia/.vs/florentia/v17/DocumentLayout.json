@@ -9,6 +9,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{B5CBC2AA-8BB9-4E95-A65D-459AE5BDD214}|florentia\\florentia.csproj|c:\\poliedro\\openai\\florentia\\florentia\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{B5CBC2AA-8BB9-4E95-A65D-459AE5BDD214}|florentia\\florentia.csproj|solutionrelative:florentia\\.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5CBC2AA-8BB9-4E95-A65D-459AE5BDD214}|florentia\\florentia.csproj|c:\\poliedro\\openai\\florentia\\florentia\\.env.example||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B5CBC2AA-8BB9-4E95-A65D-459AE5BDD214}|florentia\\florentia.csproj|solutionrelative:florentia\\.env.example||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,7 +32,7 @@
               "RelativeDocumentMoniker": "florentia\\Program.cs",
               "ToolTip": "C:\\Poliedro\\openai\\florentia\\florentia\\Program.cs",
               "RelativeToolTip": "florentia\\Program.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAApwGwAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAmwKoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-06T17:44:16.361Z",
               "IsPinned": true,
@@ -46,6 +50,19 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
               "WhenOpened": "2025-08-06T20:05:10.334Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": ".env.example",
+              "DocumentMoniker": "C:\\Poliedro\\openai\\florentia\\florentia\\.env.example",
+              "RelativeDocumentMoniker": "florentia\\.env.example",
+              "ToolTip": "C:\\Poliedro\\openai\\florentia\\florentia\\.env.example",
+              "RelativeToolTip": "florentia\\.env.example",
+              "ViewState": "AgIAAAwAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-08-06T21:53:26.114Z",
               "EditorCaption": ""
             },
             {
