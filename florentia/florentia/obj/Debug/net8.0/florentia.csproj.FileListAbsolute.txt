@@ -40,3 +40,5 @@ C:\Poliedro\openai\florentia\florentia\obj\Debug\net8.0\florentia.sourcelink.jso
 C:\Poliedro\openai\florentia\florentia\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Poliedro\openai\florentia\florentia\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Poliedro\openai\florentia\florentia\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Poliedro\openai\florentia\florentia\bin\Debug\net8.0\DotNetEnv.dll
+C:\Poliedro\openai\florentia\florentia\bin\Debug\net8.0\Sprache.dll

@@ -45,6 +45,9 @@
   "components": {
     "schemas": {
       "ChatRequest": {
+        "required": [
+          "userMessage"
+        ],
         "type": "object",
         "properties": {
           "userMessage": {

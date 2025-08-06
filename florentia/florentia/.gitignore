@@ -1,0 +1,45 @@
+# Archivos de entorno
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Directorios de compilación y dependencias
+bin/
+obj/
+/bin
+/obj
+packages/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+.vs/
+.vscode/
+*.vspscc
+*.vssscc
+*.dll
+*.pdb
+*.exe
+*.cache
+*.swp
+
+# Archivos de configuración local
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Local.json
+appsettings.*.json
+
+# Archivos de registro
+*.log
+logs/
+
+# Archivos de respaldo y temporales
+*~
+*.bak
+*.tmp
+*.swp
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
