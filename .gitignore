@@ -508,3 +508,4 @@ global.json
 *.suo
 /florentia/.vs/florentia/v17/*
 /florentia/florentia/obj/Debug/*
+/florentia/.vs/florentia/v17/*
