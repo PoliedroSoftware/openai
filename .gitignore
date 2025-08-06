@@ -509,3 +509,5 @@ global.json
 /florentia/.vs/florentia/v17/*
 /florentia/florentia/obj/Debug/*
 /florentia/.vs/florentia/v17/*
+/florentia/florentia/.env.example
+/florentia/.vs/florentia/v17/*

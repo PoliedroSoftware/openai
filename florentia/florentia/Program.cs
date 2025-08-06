@@ -38,7 +38,14 @@ if (string.IsNullOrWhiteSpace(openAIToken))
     }
 }
 
-builder.Services.AddSingleton<OpenAIService>(new OpenAIService(openAIToken));
+string openAIModel = Environment.GetEnvironmentVariable("OPENAI_MODEL") ?? "gpt-3.5-turbo";
+string maxTokensStr = Environment.GetEnvironmentVariable("OPENAI_MAX_TOKENS") ?? "100";
+string temperatureStr = Environment.GetEnvironmentVariable("OPENAI_TEMPERATURE") ?? "0.7";
+
+int maxTokens = int.TryParse(maxTokensStr, out var tokens) ? tokens : 100;
+double temperature = double.TryParse(temperatureStr, out var temp) ? temp : 0.7;
+
+builder.Services.AddSingleton<OpenAIService>(new OpenAIService(openAIToken, openAIModel, maxTokens, temperature));
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
@@ -95,12 +102,18 @@ app.Run();
 public class OpenAIService
 {
     private readonly string _apiKey;
+    private readonly string _model;
+    private readonly int _maxTokens;
+    private readonly double _temperature;
     private readonly HttpClient _httpClient;
     private const string OpenAiUrl = "https://api.openai.com/v1/chat/completions";
 
-    public OpenAIService(string apiKey)
+    public OpenAIService(string apiKey, string model, int maxTokens, double temperature)
     {
         _apiKey = apiKey ?? throw new ArgumentNullException(nameof(apiKey), "Se requiere un token de API válido");
+        _model = model;
+        _maxTokens = maxTokens;
+        _temperature = temperature;
         _httpClient = new HttpClient();
         _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
     }
@@ -121,10 +134,10 @@ public class OpenAIService
         
         var requestBody = new
         {
-            model = "gpt-3.5-turbo",
-            messages = messages,
-            max_tokens = 100,
-            temperature = 0.7
+            model = _model,
+            messages,
+            max_tokens = _maxTokens,
+            temperature = _temperature
         };
         
         var content = new StringContent(JsonSerializer.Serialize(requestBody), Encoding.UTF8, "application/json");
