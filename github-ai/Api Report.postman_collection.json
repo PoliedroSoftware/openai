@@ -1,0 +1,421 @@
+{
+	"info": {
+		"_postman_id": "bb4b6c02-6ff1-46da-a792-5b0d8890cd45",
+		"name": "Api Report",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24989828"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "draft-report",
+							"item": [
+								{
+									"name": "/api/v1/draft-report",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/v1/draft-report"
+									},
+									"response": [
+										{
+											"name": "Default response for GET /api/v1/draft-report",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/api/v1/draft-report"
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "inventory-report",
+							"item": [
+								{
+									"name": "/api/v1/inventory-report",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Environment",
+												"value": "production-report",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/inventory-report?PageNumber=1&PageSize=10",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"inventory-report"
+											],
+											"query": [
+												{
+													"key": "PageNumber",
+													"value": "1"
+												},
+												{
+													"key": "PageSize",
+													"value": "10"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Default response for GET /api/v1/inventory-report",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/api/v1/inventory-report"
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "invoice-report",
+							"item": [
+								{
+									"name": "/api/v1/invoice-report",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Environment",
+												"value": "production-report",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/invoice-report",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"invoice-report"
+											],
+											"query": [
+												{
+													"key": "PageNumber",
+													"value": "1",
+													"disabled": true
+												},
+												{
+													"key": "PageSize",
+													"value": "10",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Default response for GET /api/v1/invoice-report",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/api/v1/invoice-report"
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "New Request",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Environment",
+												"value": "production-report-el-poste-rojo",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://gr09yevej5.execute-api.us-east-2.amazonaws.com/report/api/v1/inventory-report?PageNumber=1&PageSize=10",
+											"protocol": "https",
+											"host": [
+												"gr09yevej5",
+												"execute-api",
+												"us-east-2",
+												"amazonaws",
+												"com"
+											],
+											"path": [
+												"report",
+												"api",
+												"v1",
+												"inventory-report"
+											],
+											"query": [
+												{
+													"key": "PageNumber",
+													"value": "1"
+												},
+												{
+													"key": "PageSize",
+													"value": "10"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "New Request",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "X-Environment",
+														"value": "production-report-el-poste-rojo",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "https://gr09yevej5.execute-api.us-east-2.amazonaws.com/report/api/v1/inventory-report?PageNumber=1&PageSize=50",
+													"protocol": "https",
+													"host": [
+														"gr09yevej5",
+														"execute-api",
+														"us-east-2",
+														"amazonaws",
+														"com"
+													],
+													"path": [
+														"report",
+														"api",
+														"v1",
+														"inventory-report"
+													],
+													"query": [
+														{
+															"key": "PageNumber",
+															"value": "1"
+														},
+														{
+															"key": "PageSize",
+															"value": "50"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": null,
+											"header": [
+												{
+													"key": "Date",
+													"value": "Tue, 05 Aug 2025 16:28:59 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "11097"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "server",
+													"value": "Kestrel"
+												},
+												{
+													"key": "apigw-requestid",
+													"value": "O1yj5g8YiYcEP4g="
+												}
+											],
+											"cookie": [],
+											"body": "[\n    {\n        \"sku\": \"YV0190\",\n        \"name\": \"VALVULA ADM VICTORI ONE\",\n        \"presentation\": \"Producto\",\n        \"cost\": 17552,\n        \"sale\": 38000,\n        \"inventory\": 3,\n        \"percentage\": 116.5,\n        \"subtotal_Cost\": 52656,\n        \"subtotal_sale\": 114000\n    },\n    {\n        \"sku\": \"YV0186\",\n        \"name\": \"VALVULA ADM AK180 TTRAK180 200TTX\",\n        \"presentation\": \"Producto\",\n        \"cost\": 18445,\n        \"sale\": 34000,\n        \"inventory\": 1,\n        \"percentage\": 84.33,\n        \"subtotal_Cost\": 18445,\n        \"subtotal_sale\": 34000\n    },\n    {\n        \"sku\": \"YV0185\",\n        \"name\": \"VALVULA PLATINO 125 DTS SI XCD 125\",\n        \"presentation\": \"Producto\",\n        \"cost\": 33439,\n        \"sale\": 54000,\n        \"inventory\": 3,\n        \"percentage\": 61.49,\n        \"subtotal_Cost\": 100317,\n        \"subtotal_sale\": 162000\n    },\n    {\n        \"sku\": \"YV0180\",\n        \"name\": \"VALVULAS DISCOVERI 100M 110\",\n        \"presentation\": \"Producto\",\n        \"cost\": 38675,\n        \"sale\": 58000,\n        \"inventory\": 8,\n        \"percentage\": 49.97,\n        \"subtotal_Cost\": 309400,\n        \"subtotal_sale\": 464000\n    },\n    {\n        \"sku\": \"YV0179\",\n        \"name\": \"VALVULA ADM Y ESC CBZ XL\",\n        \"presentation\": \"Producto\",\n        \"cost\": 15351,\n        \"sale\": 38600,\n        \"inventory\": 2,\n        \"percentage\": 151.45,\n        \"subtotal_Cost\": 30702,\n        \"subtotal_sale\": 77200\n    },\n    {\n        \"sku\": \"YV0176\",\n        \"name\": \"VALVULA ADM ESC DISCOVER 100 BOXER 100\",\n        \"presentation\": \"Producto\",\n        \"cost\": 22967,\n        \"sale\": 34000,\n        \"inventory\": 2,\n        \"percentage\": 48.04,\n        \"subtotal_Cost\": 45934,\n        \"subtotal_sale\": 68000\n    },\n    {\n        \"sku\": \"YV0173\",\n        \"name\": \"VALVULA ADM Y ESC SELLOS CRYRTON 115 FL REVO  PAR\",\n        \"presentation\": \"Producto\",\n        \"cost\": 18564,\n        \"sale\": 28000,\n        \"inventory\": 2,\n        \"percentage\": 50.83,\n        \"subtotal_Cost\": 37128,\n        \"subtotal_sale\": 56000\n    },\n    {\n        \"sku\": \"YV0172\",\n        \"name\": \"VALVULA ADM Y ESC SELLOS LIBERO 110 REVO PAR\",\n        \"presentation\": \"Producto\",\n        \"cost\": 22015,\n        \"sale\": 38000,\n        \"inventory\": 5,\n        \"percentage\": 72.61,\n        \"subtotal_Cost\": 110075,\n        \"subtotal_sale\": 190000\n    },\n    {\n        \"sku\": \"YV0171\",\n        \"name\": \"VALVULA ADM  Y ESC SELLOS CBF 125 XR 125L BRIO REVO. PAR\",\n        \"presentation\": \"Producto\",\n        \"cost\": 20468,\n        \"sale\": 34000,\n        \"inventory\": 4,\n        \"percentage\": 39.59,\n        \"subtotal_Cost\": 81872,\n        \"subtotal_sale\": 136000\n    },\n    {\n        \"sku\": \"YV0168\",\n        \"name\": \"VALVULA ADM CB190R XRE\",\n        \"presentation\": \"Producto\",\n        \"cost\": 21836,\n        \"sale\": 48900,\n        \"inventory\": 2,\n        \"percentage\": 123.94,\n        \"subtotal_Cost\": 43672,\n        \"subtotal_sale\": 97800\n    },\n    {\n        \"sku\": \"YV0166\",\n        \"name\": \"VALVULA ADM Y ESC SELLOS AX4 -VIVAS R 115 REVO\",\n        \"presentation\": \"Producto\",\n        \"cost\": 28203,\n        \"sale\": 46000,\n        \"inventory\": 2,\n        \"percentage\": 63.1,\n        \"subtotal_Cost\": 56406,\n        \"subtotal_sale\": 92000\n    },\n    {\n        \"sku\": \"YV0165\",\n        \"name\": \"VALVULA ADM DYNAMIC 125\",\n        \"presentation\": \"Producto\",\n        \"cost\": 18921,\n        \"sale\": 38000,\n        \"inventory\": 1,\n        \"percentage\": 100.84,\n        \"subtotal_Cost\": 18921,\n        \"subtotal_sale\": 38000\n    },\n    {\n        \"sku\": \"YV0163\",\n        \"name\": \"VALVULA ADM Y  Y SCP MOTO CARRO\",\n        \"presentation\": \"Producto\",\n        \"cost\": 21063,\n        \"sale\": 48000,\n        \"inventory\": 1,\n        \"percentage\": 127.89,\n        \"subtotal_Cost\": 21063,\n        \"subtotal_sale\": 48000\n    },\n    {\n        \"sku\": \"YV0162\",\n        \"name\": \"VALVULA ESCA PULSAR NS150 NS160\",\n        \"presentation\": \"Producto\",\n        \"cost\": 41650,\n        \"sale\": 78000,\n        \"inventory\": 4,\n        \"percentage\": 87.27,\n        \"subtotal_Cost\": 166600,\n        \"subtotal_sale\": 312000\n    },\n    {\n        \"sku\": \"YV0160\",\n        \"name\": \"KIT VALVULA ADM Y ESC+SELLOS.FZ 162,O-SZ RR/REVO_PAR\",\n        \"presentation\": \"Producto\",\n        \"cost\": 20111,\n        \"sale\": 46000,\n        \"inventory\": 4,\n        \"percentage\": 128.73,\n        \"subtotal_Cost\": 80444,\n        \"subtotal_sale\": 184000\n    },\n    {\n        \"sku\": \"YV0159\",\n        \"name\": \"KIT VALVULA ADM Y ESC+SELLOS.FZ 16-FAZER 16-SZR 150/REVO_PAR\",\n        \"presentation\": \"Producto\",\n        \"cost\": 23800,\n        \"sale\": 44000,\n        \"inventory\": 0,\n        \"percentage\": 84.87,\n        \"subtotal_Cost\": 0,\n        \"subtotal_sale\": 0\n    },\n    {\n        \"sku\": \"YV0158\",\n        \"name\": \"VALVULA ADM ESC APACHE RTR 160 180\",\n        \"presentation\": \"Producto\",\n        \"cost\": 27072,\n        \"sale\": 46000,\n        \"inventory\": 2,\n        \"percentage\": 69.92,\n        \"subtotal_Cost\": 54144,\n        \"subtotal_sale\": 92000\n    },\n    {\n        \"sku\": \"YV0157\",\n        \"name\": \"KIT VALVULA ADM Y ESC+SELLO.TVS 100 SPORT/REVO_PAR\",\n        \"presentation\": \"Producto\",\n        \"cost\": 21600,\n        \"sale\": 24000,\n        \"inventory\": 1,\n        \"percentage\": 144.9,\n        \"subtotal_Cost\": 21600,\n        \"subtotal_sale\": 24000\n    },\n    {\n        \"sku\": \"YV0156\",\n        \"name\": \"VALVULA ADM Y ESC SELLOS CB 110 CB 110 DLX  WAVE 110 REVO  PAR\",\n        \"presentation\": \"Producto\",\n        \"cost\": 26120,\n        \"sale\": 38000,\n        \"inventory\": 2,\n        \"percentage\": 45.48,\n        \"subtotal_Cost\": 52240,\n        \"subtotal_sale\": 76000\n    },\n    {\n        \"sku\": \"YV0155\",\n        \"name\": \"VALVULA ADM Y ESC DISCOVER 125 ST 150\",\n        \"presentation\": \"Producto\",\n        \"cost\": 48671,\n        \"sale\": 68900,\n        \"inventory\": 3,\n        \"percentage\": 41.56,\n        \"subtotal_Cost\": 146013,\n        \"subtotal_sale\": 206700\n    },\n    {\n        \"sku\": \"YV0154\",\n        \"name\": \"KIT VALVULA ADM YESC+SELLOS .BWS 125X-BWS 125 FI/REVO_2PAR\",\n        \"presentation\": \"Producto\",\n        \"cost\": 46767,\n        \"sale\": 78498.87,\n        \"inventory\": 0,\n        \"percentage\": 67.85,\n        \"subtotal_Cost\": 0,\n        \"subtotal_sale\": 0\n    },\n    {\n        \"sku\": \"YV0153\",\n        \"name\": \"VALVULAS ESC PULSAR200NS\",\n        \"presentation\": \"Producto\",\n        \"cost\": 46350,\n        \"sale\": 78000,\n        \"inventory\": 3,\n        \"percentage\": 68.28,\n        \"subtotal_Cost\": 139050,\n        \"subtotal_sale\": 234000\n    },\n    {\n        \"sku\": \"YV0152\",\n        \"name\": \"KIT VALVULA ADM Y ESC+SELLOS.PULSAR 135LS/REVO_2PAR\",\n        \"presentation\": \"Producto\",\n        \"cost\": 51289,\n        \"sale\": 78000,\n        \"inventory\": 0,\n        \"percentage\": 52.08,\n        \"subtotal_Cost\": 0,\n        \"subtotal_sale\": 0\n    },\n    {\n        \"sku\": \"YV0151\",\n        \"name\": \"VALVULAS ADM Y ESC YBR 125 LIBERO XTZ 125\",\n        \"presentation\": \"Producto\",\n        \"cost\": 25644,\n        \"sale\": 45000,\n        \"inventory\": 1,\n        \"percentage\": 75.48,\n        \"subtotal_Cost\": 25644,\n        \"subtotal_sale\": 45000\n    },\n    {\n        \"sku\": \"YV0148\",\n        \"name\": \"VALVULAS ADM ESC XL125-185S\",\n        \"presentation\": \"Producto\",\n        \"cost\": 19813,\n        \"sale\": 38000,\n        \"inventory\": 1,\n        \"percentage\": 91.79,\n        \"subtotal_Cost\": 19813,\n        \"subtotal_sale\": 38000\n    },\n    {\n        \"sku\": \"YV0145\",\n        \"name\": \"VALVULA ADM Y SCP MOTO CARRO 175\",\n        \"presentation\": \"Producto\",\n        \"cost\": 16779,\n        \"sale\": 40000,\n        \"inventory\": 1,\n        \"percentage\": 138.39,\n        \"subtotal_Cost\": 16779,\n        \"subtotal_sale\": 40000\n    },\n    {\n        \"sku\": \"YV0143\",\n        \"name\": \"VALVULA ADM PULSAR 180\",\n        \"presentation\": \"Producto\",\n        \"cost\": 22491,\n        \"sale\": 48000,\n        \"inventory\": 1,\n        \"percentage\": 113.42,\n        \"subtotal_Cost\": 22491,\n        \"subtotal_sale\": 48000\n    },\n    {\n        \"sku\": \"YV0136\",\n        \"name\": \"VALVULA ADM Y ESC NXR BROS XR 125\",\n        \"presentation\": \"Producto\",\n        \"cost\": 26775,\n        \"sale\": 46000,\n        \"inventory\": 4,\n        \"percentage\": 71.8,\n        \"subtotal_Cost\": 107100,\n        \"subtotal_sale\": 184000\n    },\n    {\n        \"sku\": \"YV0131\",\n        \"name\": \"VALVULA SELLOS GN125 GS125 GIXXER150\",\n        \"presentation\": \"Producto\",\n        \"cost\": 23324,\n        \"sale\": 38000,\n        \"inventory\": 3,\n        \"percentage\": 62.92,\n        \"subtotal_Cost\": 69972,\n        \"subtotal_sale\": 114000\n    },\n    {\n        \"sku\": \"YV0128\",\n        \"name\": \"VALVULA ADM Y ESC  SELLOS BEST 125 VIVAX 115 REVO  PAR\",\n        \"presentation\": \"Producto\",\n        \"cost\": 16184,\n        \"sale\": 26000,\n        \"inventory\": 0,\n        \"percentage\": 60.65,\n        \"subtotal_Cost\": 0,\n        \"subtotal_sale\": 0\n    },\n    {\n        \"sku\": \"YV0125\",\n        \"name\": \"KIT VALVULA ADM Y ESC+SELLOS.ECO 100-ECO DELUX-AK110-C100 WAVE-C100-BIZ/REVO_PAR\",\n        \"presentation\": \"Producto\",\n        \"cost\": 18385,\n        \"sale\": 24500,\n        \"inventory\": -1,\n        \"percentage\": 188.24,\n        \"subtotal_Cost\": -18385,\n        \"subtotal_sale\": -24500\n    },\n    {\n        \"sku\": \"YV0123\",\n        \"name\": \"VALVULA ADM ESC DISCOVER135\",\n        \"presentation\": \"Producto\",\n        \"cost\": 27132,\n        \"sale\": 42000,\n        \"inventory\": 4,\n        \"percentage\": 77.36,\n        \"subtotal_Cost\": 108528,\n        \"subtotal_sale\": 168000\n    },\n    {\n        \"sku\": \"YV0121\",\n        \"name\": \"VALVULA ADM Y ESC SELLOS CRYPTON 110-115 REVO PAR\",\n        \"presentation\": \"Producto\",\n        \"cost\": 17552,\n        \"sale\": 38000,\n        \"inventory\": 3,\n        \"percentage\": 116.5,\n        \"subtotal_Cost\": 52656,\n        \"subtotal_sale\": 114000\n    },\n    {\n        \"sku\": \"YV0118\",\n        \"name\": \"VALVULA ADM Y ESC  CBF 150\",\n        \"presentation\": \"Producto\",\n        \"cost\": 25228,\n        \"sale\": 38000,\n        \"inventory\": 4,\n        \"percentage\": 50.63,\n        \"subtotal_Cost\": 100912,\n        \"subtotal_sale\": 152000\n    },\n    {\n        \"sku\": \"YV0114\",\n        \"name\": \"KIT VALVULA ADM Y ESC+SELLOS.BOXER CT 100BM 100 CLASSIC-PLAT 100-CALIBER 115/REVO_PAR\",\n        \"presentation\": \"Producto\",\n        \"cost\": 22491,\n        \"sale\": 33000,\n        \"inventory\": 2,\n        \"percentage\": 46.73,\n        \"subtotal_Cost\": 44982,\n        \"subtotal_sale\": 66000\n    },\n    {\n        \"sku\": \"YV0111\",\n        \"name\": \"VALVULA ADM AKT125 NKD 125 TTTR 125\",\n        \"presentation\": \"Producto\",\n        \"cost\": 26477,\n        \"sale\": 38000,\n        \"inventory\": 1,\n        \"percentage\": 43.52,\n        \"subtotal_Cost\": 26477,\n        \"subtotal_sale\": 38000\n    },\n    {\n        \"sku\": \"YV0108\",\n        \"name\": \"VALVULA  ADM AK200SM 200XM\",\n        \"presentation\": \"Producto\",\n        \"cost\": 21955,\n        \"sale\": 38900,\n        \"inventory\": 1,\n        \"percentage\": 77.18,\n        \"subtotal_Cost\": 21955,\n        \"subtotal_sale\": 38900\n    },\n    {\n        \"sku\": \"YV0105\",\n        \"name\": \"VALVULA ADM Y ESC SELLOS AGULITY 125 RS NAKED XTREME CITY 150 FLY 125 -150 ROCKERT\",\n        \"presentation\": \"Producto\",\n        \"cost\": 26358,\n        \"sale\": 38000,\n        \"inventory\": 3,\n        \"percentage\": 44.17,\n        \"subtotal_Cost\": 79074,\n        \"subtotal_sale\": 114000\n    },\n    {\n        \"sku\": \"YT0062\",\n        \"name\": \"KIT SPROCKES 14X38 428 WAVER 2\",\n        \"presentation\": \"Producto\",\n        \"cost\": 28441,\n        \"sale\": 60000,\n        \"inventory\": 0,\n        \"percentage\": 110.96,\n        \"subtotal_Cost\": 0,\n        \"subtotal_sale\": 0\n    },\n    {\n        \"sku\": \"YT0028\",\n        \"name\": \"KIT DE ARRASTRE TTR 180 TTR200\",\n        \"presentation\": \"Producto\",\n        \"cost\": 57715,\n        \"sale\": 111000,\n        \"inventory\": 0,\n        \"percentage\": 92.32,\n        \"subtotal_Cost\": 0,\n        \"subtotal_sale\": 0\n    },\n    {\n        \"sku\": \"YT0027\",\n        \"name\": \"KIT ARRAESTRE 110AKT 180AKT 180TTX\",\n        \"presentation\": \"Producto\",\n        \"cost\": 58667,\n        \"sale\": 98000,\n        \"inventory\": 0,\n        \"percentage\": 67.04,\n        \"subtotal_Cost\": 0,\n        \"subtotal_sale\": 0\n    },\n    {\n        \"sku\": \"YT0025\",\n        \"name\": \"KIT ARRASTRE SPIDER15X43 428 CBF150\",\n        \"presentation\": \"Producto\",\n        \"cost\": 63546,\n        \"sale\": 98000,\n        \"inventory\": 0,\n        \"percentage\": 54.22,\n        \"subtotal_Cost\": 0,\n        \"subtotal_sale\": 0\n    },\n    {\n        \"sku\": \"YT0020\",\n        \"name\": \"KIT DE ARRASTRE WUAVE  100\",\n        \"presentation\": \"Producto\",\n        \"cost\": 39151,\n        \"sale\": 78000,\n        \"inventory\": 0,\n        \"percentage\": 99.23,\n        \"subtotal_Cost\": 0,\n        \"subtotal_sale\": 0\n    },\n    {\n        \"sku\": \"YT0017\",\n        \"name\": \"KIT ARRASTRE SPIDER 13X39 (428HX108).TVS 100 SPORT/REVO_KITX3\",\n        \"presentation\": \"Producto\",\n        \"cost\": 26800,\n        \"sale\": 50000,\n        \"inventory\": 1,\n        \"percentage\": 86.57,\n        \"subtotal_Cost\": 26800,\n        \"subtotal_sale\": 50000\n    },\n    {\n        \"sku\": \"YT0014\",\n        \"name\": \"KIT DE ARRASTRE XTZ 125 DT 125\",\n        \"presentation\": \"Producto\",\n        \"cost\": 46053,\n        \"sale\": 100000,\n        \"inventory\": 0,\n        \"percentage\": 117.14,\n        \"subtotal_Cost\": 0,\n        \"subtotal_sale\": 0\n    },\n    {\n        \"sku\": \"YT0003\",\n        \"name\": \"KIT ARRASTRE SPIDER 14X42 (428HX120).ECO DULEX KS-ES EURO II-SPLENDOR NXG-EUROII/REVO_KITX3\",\n        \"presentation\": \"Producto\",\n        \"cost\": 29600,\n        \"sale\": 54000,\n        \"inventory\": 0,\n        \"percentage\": 82.43,\n        \"subtotal_Cost\": 0,\n        \"subtotal_sale\": 0\n    },\n    {\n        \"sku\": \"YT0001\",\n        \"name\": \"KIT ARRASTRE SPIDER  14X42 (428HX120).BOXER 100 CT-PLATINO 100/REVO_KITX3\",\n        \"presentation\": \"Producto\",\n        \"cost\": 29300,\n        \"sale\": 53000,\n        \"inventory\": 0,\n        \"percentage\": 80.89,\n        \"subtotal_Cost\": 0,\n        \"subtotal_sale\": 0\n    },\n    {\n        \"sku\": \"YS8134\",\n        \"name\": \"KIT ARRASTRE 15X43 428 PULSAR 150NS 160NS 135 DISCOVERY 125ST 150ST\",\n        \"presentation\": \"Producto\",\n        \"cost\": 69496,\n        \"sale\": 110000,\n        \"inventory\": 0,\n        \"percentage\": 58.28,\n        \"subtotal_Cost\": 0,\n        \"subtotal_sale\": 0\n    },\n    {\n        \"sku\": \"YS8122\",\n        \"name\": \"KIT ARRASTRE 13X47 428 HX116 BOXER100 PLATINO\",\n        \"presentation\": \"Producto\",\n        \"cost\": 67889,\n        \"sale\": 98000,\n        \"inventory\": 0,\n        \"percentage\": 44.35,\n        \"subtotal_Cost\": 0,\n        \"subtotal_sale\": 0\n    },\n    {\n        \"sku\": \"YS8121\",\n        \"name\": \"KIR ARRASTRE TERMICO AKT 180 TTR 200\",\n        \"presentation\": \"Producto\",\n        \"cost\": 87643,\n        \"sale\": 125000,\n        \"inventory\": 0,\n        \"percentage\": 42.62,\n        \"subtotal_Cost\": 0,\n        \"subtotal_sale\": 0\n    }\n]"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "payment-method-report",
+							"item": [
+								{
+									"name": "/api/v1/payment-method-report",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Environment",
+												"value": "production-report-el-poste-rojo",
+												"type": "text"
+											}
+										],
+										"url": "{{baseUrl}}/api/v1/payment-method-report"
+									},
+									"response": [
+										{
+											"name": "Default response for GET /api/v1/payment-method-report",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/api/v1/payment-method-report"
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "sales-report",
+							"item": [
+								{
+									"name": "/api/v1/sales-report",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Environment",
+												"value": "production-report-el-poste-rojo",
+												"type": "text"
+											}
+										],
+										"url": "{{baseUrl}}/api/v1/sales-report"
+									},
+									"response": [
+										{
+											"name": "Default response for GET /api/v1/sales-report",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/api/v1/sales-report"
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "suppliers-report",
+							"item": [
+								{
+									"name": "/api/v1/suppliers-report",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/v1/suppliers-report"
+									},
+									"response": [
+										{
+											"name": "Default response for GET /api/v1/suppliers-report",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/api/v1/suppliers-report"
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "utility-report",
+							"item": [
+								{
+									"name": "/api/v1/utility-report",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-Environment",
+												"value": "production-report-el-poste-rojo",
+												"type": "text"
+											}
+										],
+										"url": "{{baseUrl}}/api/v1/utility-report"
+									},
+									"response": [
+										{
+											"name": "Default response for GET /api/v1/utility-report",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/api/v1/utility-report"
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "basePath",
+			"value": "report"
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://gr09yevej5.execute-api.us-east-2.amazonaws.com/{{basePath}}"
+		}
+	]
+}

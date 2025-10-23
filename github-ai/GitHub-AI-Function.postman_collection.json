@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "12345678-1234-1234-1234-123456789abc",
+		"name": "GitHub AI Azure Function",
+		"description": "Collection to test Azure Function with GitHub AI integration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12345678"
+	},
+	"item": [
+		{
+			"name": "GET - Default Question",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response has question and answer\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('question');",
+							"    pm.expect(jsonData).to.have.property('answer');",
+							"    pm.expect(jsonData).to.have.property('model');",
+							"});",
+							"",
+							"pm.test(\"Model is correct\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.model).to.eql('openai/gpt-5');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/Function1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Function1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Custom Question (Query Parameter)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response has question and answer\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('question');",
+							"    pm.expect(jsonData).to.have.property('answer');",
+							"    pm.expect(jsonData).to.have.property('model');",
+							"});",
+							"",
+							"pm.test(\"Question matches input\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.question).to.eql('What is the capital of Spain?');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/Function1?question=What is the capital of Spain?",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Function1"
+					],
+					"query": [
+						{
+							"key": "question",
+							"value": "What is the capital of Spain?"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Programming Question",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response contains programming-related content\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.answer.toLowerCase()).to.include('c#');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/Function1?question=Explain what is C# async/await in simple terms",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Function1"
+					],
+					"query": [
+						{
+							"key": "question",
+							"value": "Explain what is C# async/await in simple terms"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Simple Question",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response has question and answer\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('question');",
+							"    pm.expect(jsonData).to.have.property('answer');",
+							"    pm.expect(jsonData).to.have.property('model');",
+							"});",
+							"",
+							"pm.test(\"Question matches input\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.question).to.eql('What is the largest planet in our solar system?');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/plain"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "What is the largest planet in our solar system?"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/Function1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Function1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Complex Question",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response has detailed answer\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.answer.length).to.be.greaterThan(50);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/plain"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "Explain the differences between Azure Functions v3 and v4, and what are the main benefits of upgrading?"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/Function1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Function1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Code Generation Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response contains code\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.answer.toLowerCase()).to.include('class');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/plain"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "Create a simple C# class for a Person with properties Name, Age, and Email, and a method to display the information"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/Function1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Function1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Error Test - Empty POST",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 (uses default question)\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Uses default question when body is empty\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.question).to.eql('What is the capital of France?');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/plain"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/Function1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Function1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:7071",
+			"type": "string"
+		}
+	]
+}
