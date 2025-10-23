@@ -8,10 +8,10 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["poli/poliedro.csproj", "poli/"]
-RUN dotnet restore "poli/poliedro.csproj"
+COPY ["poliedro/poliedro.csproj", "poliedro/"]
+RUN dotnet restore "poliedro/poliedro.csproj"
 COPY . .
-WORKDIR "/src/poli"
+WORKDIR "/src/poliedro"
 RUN dotnet build "poliedro.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # Publicar la aplicación
