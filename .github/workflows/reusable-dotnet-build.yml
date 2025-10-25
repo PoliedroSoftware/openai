@@ -1,5 +1,8 @@
 name: Reusable .NET Build and Test
 
+permissions:
+  contents: read
+
 on:
   workflow_call:
     inputs:
