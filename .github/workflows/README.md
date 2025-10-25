@@ -41,7 +41,7 @@ Performs SonarCloud static code analysis.
 - `project-key`: SonarCloud project key (required)
 - `organization`: SonarCloud organization (required)
 - `additional-args`: Additional SonarCloud arguments (optional)
-- `working-directory`: Working directory (default: '.')
+- `working-directory`: Working directory for SonarCloud analysis (default: '.')
 
 **Secrets:**
 - `SONAR_TOKEN`: SonarCloud authentication token
@@ -134,11 +134,11 @@ This workflow is configured for the **florentia** project:
 ### Running Builds
 Builds automatically run on:
 - Push to feature/pipeline branch
-- Pull requests to main, release/*, or releasecandidate/* branches
+- Pull request events (opened, synchronize, reopened) targeting main, release/*, or releasecandidate/* branches
 
 ### Deployment
 Deployment to development environment happens automatically when:
-- A pull request is merged to a target branch
+- A pull request targeting main, release/*, or releasecandidate/* branches is merged
 - All build and quality checks pass
 
 ### Manual Workflow Triggers
