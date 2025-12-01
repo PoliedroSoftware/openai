@@ -1,7 +1,8 @@
+using DotNetEnv;
+using Scalar.AspNetCore;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
-using DotNetEnv;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -60,8 +61,16 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwagger(options =>
+    {
+        options.RouteTemplate = "openapi/{documentName}.json";
+    });
+    app.MapScalarApiReference(options =>
+    {
+        options.WithTitle("Poliedro OpenAI API")
+               .WithTheme(ScalarTheme.Purple)
+               .WithDefaultHttpClient(ScalarTarget.Shell, ScalarClient.Curl);
+    });
 }
 app.UseCors();
 app.UseHttpsRedirection();
